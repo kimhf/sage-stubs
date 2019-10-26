@@ -10,6 +10,7 @@
         "issues": "https://github.com/kimhf/sage-stubs/issues",
         "source": "https://github.com/kimhf/sage-stubs"
     },
+    "license": "MIT",
     "authors": [
         {
             "name": "Kim Helge Frimanslund",
