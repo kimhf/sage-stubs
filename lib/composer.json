@@ -1,0 +1,7 @@
+{
+    "name": "kimhf/sage-stubs",
+    "description": "This is the packages we want to extract stubs from.",
+    "require-dev": {
+        "roots/sage": "^9.0"
+    }
+}

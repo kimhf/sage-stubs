@@ -1,5 +1,220 @@
 <?php
 
+namespace App\Controllers {
+    class App extends \Sober\Controller\Controller
+    {
+        public function siteName()
+        {
+        }
+        public static function title()
+        {
+        }
+    }
+    class FrontPage extends \Sober\Controller\Controller
+    {
+    }
+}
+namespace Roots\Sage\Assets {
+    /**
+     * Interface ManifestInterface
+     * @package Roots\Sage
+     * @author QWp6t
+     */
+    interface ManifestInterface
+    {
+        /**
+         * Get the cache-busted filename
+         *
+         * If the manifest does not have an entry for $asset, then return $asset
+         *
+         * @param string $asset The original name of the file before cache-busting
+         * @return string
+         */
+        public function get($asset);
+        /**
+         * Get the cache-busted URI
+         *
+         * If the manifest does not have an entry for $asset, then return URI for $asset
+         *
+         * @param string $asset The original name of the file before cache-busting
+         * @return string
+         */
+        public function getUri($asset);
+    }
+    /**
+     * Class JsonManifest
+     * @package Roots\Sage
+     * @author QWp6t
+     */
+    class JsonManifest implements \Roots\Sage\Assets\ManifestInterface
+    {
+        /** @var array */
+        public $manifest;
+        /** @var string */
+        public $dist;
+        /**
+         * JsonManifest constructor
+         *
+         * @param string $manifestPath Local filesystem path to JSON-encoded manifest
+         * @param string $distUri Remote URI to assets root
+         */
+        public function __construct($manifestPath, $distUri)
+        {
+        }
+        /** @inheritdoc */
+        public function get($asset)
+        {
+        }
+        /** @inheritdoc */
+        public function getUri($asset)
+        {
+        }
+    }
+}
+namespace Roots\Sage {
+    class Config extends \Illuminate\Config\Repository
+    {
+        protected static $instance;
+    }
+    class Container extends \Illuminate\Container\Container
+    {
+    }
+}
+namespace Roots\Sage\Template {
+    /**
+     * Class BladeProvider
+     *
+     * @method bool exists(string $view) Determine if a given view exists.
+     * @method mixed share(array|string $key, mixed $value = null)
+     * @method array creator(array|string $views, \Closure|string $callback)
+     * @method array composer(array|string $views, \Closure|string $callback)
+     * @method \Illuminate\View\View file(string $file, array $data = [], array $mergeData = [])
+     * @method \Illuminate\View\View make(string $file, array $data = [], array $mergeData = [])
+     * @method \Illuminate\View\View addNamespace(string $namespace, string|array $hints)
+     * @method \Illuminate\View\View replaceNamespace(string $namespace, string|array $hints)
+     * @method \Illuminate\Contracts\Container\Container getContainer()
+     */
+    class Blade
+    {
+        /** @var Factory */
+        protected $env;
+        public function __construct(\Illuminate\Contracts\View\Factory $env)
+        {
+        }
+        /**
+         * Get the compiler
+         *
+         * @return \Illuminate\View\Compilers\BladeCompiler
+         */
+        public function compiler()
+        {
+        }
+        /**
+         * @param string $view
+         * @param array  $data
+         * @param array  $mergeData
+         * @return string
+         */
+        public function render($view, $data = [], $mergeData = [])
+        {
+        }
+        /**
+         * @param string $file
+         * @param array  $data
+         * @param array  $mergeData
+         * @return string
+         */
+        public function compiledPath($file, $data = [], $mergeData = [])
+        {
+        }
+        /**
+         * @param string $file
+         * @return string
+         */
+        public function normalizeViewPath($file)
+        {
+        }
+        /**
+         * Convert path to view namespace
+         *
+         * @param string $path
+         * @return string
+         */
+        public function applyNamespaceToPath($path)
+        {
+        }
+        /**
+         * Pass any method to the view Factory instance.
+         *
+         * @param  string $method
+         * @param  array  $params
+         * @return mixed
+         */
+        public function __call($method, $params)
+        {
+        }
+    }
+    /**
+     * Class BladeProvider
+     */
+    class BladeProvider extends \Illuminate\View\ViewServiceProvider
+    {
+        /**
+         * @param ContainerContract $container
+         * @param array             $config
+         * @SuppressWarnings(PHPMD.StaticAccess)
+         */
+        public function __construct(\Illuminate\Contracts\Container\Container $container = null, $config = [])
+        {
+        }
+        /**
+         * Bind required instances for the service provider.
+         */
+        public function register()
+        {
+        }
+        /**
+         * Register Filesystem
+         */
+        public function registerFilesystem()
+        {
+        }
+        /**
+         * Register the events dispatcher
+         */
+        public function registerEvents()
+        {
+        }
+        /**
+         * Register the view finder implementation.
+         */
+        public function registerViewFinder()
+        {
+        }
+    }
+    class FileViewFinder extends \Illuminate\View\FileViewFinder
+    {
+        const FALLBACK_PARTS_DELIMITER = '-';
+        /**
+         * Get an array of possible view files from a single file name.
+         *
+         * @param  string  $name
+         * @return array
+         */
+        public function getPossibleViewFiles($name)
+        {
+        }
+        /**
+         * Get an array of possible view files from an array of templates
+         *
+         * @param array $templates
+         * @return array
+         */
+        public function getPossibleViewFilesFromTemplates($templates)
+        {
+        }
+    }
+}
 namespace App {
     /**
      * Get the sage container.

@@ -19,10 +19,16 @@
     ],
     "require-dev": {
         "php": ">=7.1",
-        "giacocorsiglia/stubs-generator": "^0.5",
-        "roots/sage": "^9.0"
+        "composer/installers": "~1.0",
+        "giacocorsiglia/stubs-generator": "^0.5"
     },
     "scripts": {
-        "generate-sage-stubs": "generate-stubs --finder=finder.php --nullify-globals --out=sage-stubs.php --force"
+        "generate-stubs": "generate-stubs --finder=finder.php --nullify-globals --out=sage-stubs.php --force",
+        "post-install-cmd": [
+            "composer install --working-dir=./lib"
+        ],
+        "post-update-cmd": [
+            "composer update --working-dir=./lib"
+        ]
     }
 }
