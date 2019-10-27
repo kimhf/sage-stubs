@@ -1,6 +1,5 @@
 <?php
 
 return \StubsGenerator\Finder::create()
-    ->in('wp-content/themes/sage')
-    ->sortByName()
-;
+    ->in(['lib/wp-content', 'lib/vendor/roots'])
+    ->sortByName();
